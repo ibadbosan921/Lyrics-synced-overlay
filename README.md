@@ -43,14 +43,15 @@ for generating the `.lrc` lyric files this extension reads.
 
 ## Screenshots
 
-_Add your own screenshots here after loading the extension — a shot of the
-popup playlist, the options page, and the overlay in action on a site._
 
-```
-docs/screenshot-popup.png
-docs/screenshot-options.png
-docs/screenshot-overlay.png
-```
+![Overlay in action](screenshot-overlay.png)
+
+![Popup](screenshot-popup.png)
+
+
+## Demo
+
+https://github.com/user-attachments/assets/eaa67e72-aea4-4055-bb3a-b8d44b3ccd1b
 
 ## Installation
 
