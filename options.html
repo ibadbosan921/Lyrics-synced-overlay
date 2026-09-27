@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Lyrics Overlay Settings</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div class="brand">
+        <span class="brand-mark">LYRICS</span>
+        <span class="brand-sub">overlay settings</span>
+      </div>
+      <button id="resetBtn" class="reset-btn">Reset to defaults</button>
+    </header>
+
+    <div class="layout">
+      <!-- Hero: the overlay preview IS the product, so it leads. -->
+      <div class="preview-pane">
+        <div id="previewScreen" class="preview-screen">
+          <div class="preview-chrome">
+            <span></span><span></span><span></span>
+            <div class="preview-url">your-favorite-site.com</div>
+          </div>
+          <div class="preview-canvas">
+            <div id="posPad" class="pos-pad">
+              <div id="posDot" class="pos-dot"></div>
+            </div>
+            <div id="previewMount"></div>
+          </div>
+        </div>
+        <div class="pos-quick">
+          <button class="pos-quick-btn" data-mode="top">Top</button>
+          <button class="pos-quick-btn" data-mode="center">Center</button>
+          <button class="pos-quick-btn" data-mode="bottom">Bottom</button>
+        </div>
+        <p class="hint">Drag inside the frame to place the lyrics anywhere on screen.</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-pane">
+        <section class="group">
+          <h2>Caption style</h2>
+          <div id="displayModeRow" class="pill-row"></div>
+          <label class="field">Animation
+            <select id="animation"></select>
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Typography</h2>
+          <label class="field">Font
+            <select id="fontChoice"></select>
+          </label>
+          <div class="field-row">
+            <label class="field">Size <span id="fontSizeVal" class="val"></span>
+              <input id="fontSize" type="range" min="14" max="72" step="1" />
+            </label>
+            <label class="field">Weight
+              <select id="fontWeight">
+                <option value="400">Regular</option>
+                <option value="600">Semibold</option>
+                <option value="700">Bold</option>
+                <option value="900">Black</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">Style
+            <select id="fontStyle">
+              <option value="normal">Normal</option>
+              <option value="italic">Italic</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Color &amp; effects</h2>
+          <div class="swatch-row">
+            <label class="swatch-field">Text <input id="textColor" type="color" /></label>
+            <label class="swatch-field">Outline <input id="outlineColor" type="color" /></label>
+            <label class="swatch-field">Shadow <input id="shadowColor" type="color" /></label>
+          </div>
+          <label class="field">Outline width <span id="outlineWidthVal" class="val"></span>
+            <input id="outlineWidth" type="range" min="0" max="6" step="0.5" />
+          </label>
+          <label class="field">Shadow opacity <span id="shadowOpacityVal" class="val"></span>
+            <input id="shadowOpacity" type="range" min="0" max="1" step="0.05" />
+          </label>
+          <label class="field">Text opacity <span id="textOpacityVal" class="val"></span>
+            <input id="textOpacity" type="range" min="0.2" max="1" step="0.05" />
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Background</h2>
+          <div class="swatch-row">
+            <label class="swatch-field">Color <input id="bgColor" type="color" /></label>
+          </div>
+          <label class="field">Opacity <span id="bgOpacityVal" class="val"></span>
+            <input id="bgOpacity" type="range" min="0" max="1" step="0.05" />
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Layout</h2>
+          <label class="field">Alignment
+            <select id="alignment">
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
+          </label>
+          <div class="field-row">
+            <label class="field">Line spacing <span id="lineSpacingVal" class="val"></span>
+              <input id="lineSpacing" type="range" min="0" max="40" step="1" />
+            </label>
+            <label class="field" id="visibleLinesField">Visible lines
+              <select id="visibleLines">
+                <option value="1">Current only</option>
+                <option value="2">Current + next</option>
+              </select>
+            </label>
+          </div>
+          <label class="checkbox-row">
+            <input id="highlightCurrent" type="checkbox" />
+            Highlight current line vs. dim others
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Timing</h2>
+          <label class="field">Offset <span id="timingOffsetVal" class="val"></span>
+            <input id="timingOffset" type="range" min="-3000" max="3000" step="50" />
+          </label>
+          <p class="hint">Positive delays the lyrics, negative shows them earlier.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/constants.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* Bundled webfonts (SIL Open Font License) used by the popup, options page,
+   and — via an equivalent block built at runtime with chrome.runtime.getURL —
+   the lyrics overlay itself, so branding and overlay type stay consistent. */
+
+@font-face {
+  font-family: 'Lyrics Poppins';
+  src: url('fonts/poppins-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lyrics Poppins';
+  src: url('fonts/poppins-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lyrics Montserrat';
+  src: url('fonts/montserrat-800.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lyrics Anton';
+  src: url('fonts/anton-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lyrics Caveat';
+  src: url('fonts/caveat-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

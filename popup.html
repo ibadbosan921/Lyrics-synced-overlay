@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Synced Lyrics Overlay</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">LYRICS</span>
+      <span class="brand-sub">synced overlay</span>
+    </div>
+    <button id="openOptions" class="icon-btn" title="Settings">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+        <path d="M19.4 13a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V19a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="upload-section">
+    <label class="upload-btn">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 3v12m0-12 4 4m-4-4-4 4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+      </svg>
+      Add songs
+      <input id="fileInput" type="file" multiple accept=".mp3,.wav,.lrc" hidden />
+    </label>
+    <p class="hint">Select audio and .lrc files together — same-name files pair automatically.</p>
+  </section>
+
+  <section class="playlist-section">
+    <ul id="playlist" class="playlist"></ul>
+    <div id="emptyState" class="empty-state">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      </svg>
+      <span>No songs yet — add some above</span>
+    </div>
+  </section>
+
+  <footer class="player-bar">
+    <div class="now-playing">
+      <div id="nowPlayingName" class="now-playing-name">Nothing playing</div>
+      <div class="progress-row">
+        <span id="timeCurrent" class="time">0:00</span>
+        <input id="progress" type="range" min="0" max="100" value="0" step="0.1" />
+        <span id="timeDuration" class="time">0:00</span>
+      </div>
+    </div>
+    <div class="controls-row">
+      <button id="modeBtn" class="ctrl-btn mode-btn" title="Playback mode"></button>
+      <button id="prevBtn" class="ctrl-btn" title="Previous">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 6h2v12H6zM9.5 12 19 6v12z"/></svg>
+      </button>
+      <button id="playPauseBtn" class="ctrl-btn play-btn" title="Play/Pause">
+        <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:none"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      </button>
+      <button id="nextBtn" class="ctrl-btn" title="Next">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 6h2v12h-2zM5 6l9.5 6L5 18z"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="lib/constants.js"></script>
+  <script src="lib/db.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
